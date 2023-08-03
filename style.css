@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=REM&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+
+:root {
+  --title: "REM", sans-serif;
+  --p: "Roboto", sans-serif;
+  --secondary-color: #212121;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: var(--title);
+}
+
+body {
+  color: white;
+  background-color: var(--secondary-color);
+}
+
+/* -------------
+    My picture
+----------------*/
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #121212;
+}
+
+.my-picture {
+  width: 80vw;
+  box-shadow: rgba(238, 237, 237, 0.4) 0px 5px 15px;
+  transform: translateY(30px);
+}
+
+/* -------------
+    About me
+----------------*/
+.my-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  padding: 20px;
+}
+
+.my-description-pc {
+  display: none;
+}
+
+.my-description h1 {
+  padding: 2rem;
+}
+
+.my-description p {
+  padding: 10px 30px;
+  font-family: var(--p);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.icons {
+  margin-top: 30px;
+  display: flex;
+  gap: 40px;
+}
+.icons i {
+  font-size: 3rem;
+}
+
+/* -------------
+    Projects
+----------------*/
+
+#projects {
+  background-color: var(--secondary-color);
+  margin: 5rem auto;
+  width: 90vw;
+}
+
+#projects h1 {
+  font-family: var(--title);
+}
+
+#projects img {
+  text-align: center;
+  width: 90vw;
+}
+
+.project {
+  background-color: #141414;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.project-description {
+  padding-left: 20px;
+  width: 85vw;
+  padding: 10px 10px;
+}
+
+.project h2 {
+  font-family: var(--title);
+  margin-left: 20px;
+}
+
+.project p {
+  margin: 10px 10px;
+  font-family: var(--p);
+  line-height: 23px;
+}
+
+/* -------------
+    Footer
+----------------*/
+
+footer {
+  background-color: #121212;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer h1 {
+  font-family: var(--title);
+}
+
+footer p {
+  font-family: var(--p);
+  margin-top: 5px;
+}
+
+.contact {
+  font-size: 1.2rem;
+}
+
+/* -------------
+    PC version
+----------------*/
+
+@media (min-width: 1200px) {
+  /* -------------
+    Header and about me
+    ----------------*/
+
+  .my-picture {
+    width: 30vw;
+    border-radius: 10px;
+  }
+  .my-description {
+    display: none !important;
+  }
+  .my-description {
+    display: none;
+  }
+  header {
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  .my-description-pc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    box-shadow: rgba(238, 237, 237, 0.4) 0px 5px 15px;
+    padding: 20px;
+    min-height: 40vh;
+    width: 50vw;
+    border-radius: 10px;
+  }
+
+  .my-description-pc p {
+    font-size: 1.5rem;
+    font-family: var(--p);
+  }
+
+  .my-description-pc h1 {
+    font-size: 3rem;
+  }
+
+  /* -------------
+    Projects
+    ----------------*/
+
+  #projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #projects h1 {
+    position: absolute;
+  }
+
+  #projects img {
+    text-align: center;
+    width: 25vw;
+  }
+  .project {
+    background-color: #141414;
+    border-radius: 20px;
+    margin-top: 100px;
+    width: 25vw;
+    min-height: 25vw;
+  }
+
+  .project p {
+    margin: 10px 10px;
+    font-family: var(--p);
+    line-height: 23px;
+    font-size: 1em;
+  }
+
+  .project-description {
+    padding-left: 20px;
+    width: 24vw;
+    padding: 10px 10px;
+  }
+}
+
+@media (min-width: 700px) {
+  /* -------------
+    Header and about me
+    ----------------*/
+
+  .my-picture {
+    width: 30vw;
+    border-radius: 10px;
+  }
+  .my-description {
+    display: block;
+  }
+  header {
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .my-description-pc p {
+    font-size: 1rem;
+  }
+
+  .my-description-pc h1 {
+    font-size: 2rem;
+  }
+  .icons {
+    display: flex;
+    justify-content: center;
+  }
+  /* -------------
+        Projects
+        ----------------*/
+
+  #projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #projects h1 {
+    position: absolute;
+  }
+
+  #projects img {
+    text-align: center;
+    width: 25vw;
+  }
+  .project {
+    background-color: #141414;
+    border-radius: 20px;
+    margin-top: 100px;
+    width: 25vw;
+    min-height: 25vw;
+  }
+
+  .project p {
+    margin: 10px 10px;
+    font-family: var(--p);
+    line-height: 23px;
+    font-size: 1em;
+  }
+
+  .project-description {
+    padding-left: 20px;
+    width: 24vw;
+    padding: 10px 10px;
+  }
+}
