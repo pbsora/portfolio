@@ -6,10 +6,34 @@ import { IoIosArrowDown } from "react-icons/io";
 const Hero = () => {
   return (
     <section
-      className="h-screen snap-center w-full bg-[#181A1B] relative"
+      className="h-screen snap-center w-full bg-[#181A1B] relative flex items-center justify-center"
       id="home"
     >
-      <div className="absolute bottom-40">
+      <div className="font-montserrat flex flex-col gap-6">
+        <h1 className="text-5xl text-white font-bold text-center">
+          Hi, I'm Pedro
+        </h1>
+        <p className="text-zinc-200 text-center text-2xl">
+          A full-stack developer
+        </p>
+        <div className="flex gap-6 justify-center items-center">
+          <div className="w-fit relative group">
+            <a
+              href="#about"
+              className="bg-transparent relative hover:cursor-pointer border-2 hover:ring-4 ring-red-800 border-red-500 hover:bg-red-500 duration-200 hover:border-transparent hover:outline-8  z-50 rounded-3xl py-3 px-6 text-white"
+            >
+              About me
+            </a>{" "}
+          </div>
+          <a
+            href="#portfolio"
+            className="bg-sky-600 hover:cursor-pointer hover:bg-transparent border-2 border-sky-600 rounded-3xl duration-200 py-3 px-6 text-white"
+          >
+            Some of my work
+          </a>
+        </div>
+      </div>
+      <div className="absolute bottom-24 md:bottom-40 left-0">
         <Icon
           name="LinkedIn"
           bgColor="bg-sky-600"

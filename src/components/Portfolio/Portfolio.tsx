@@ -1,0 +1,192 @@
+import { motion, useScroll, useSpring } from "framer-motion";
+import { ReactNode, useRef } from "react";
+import CSS from "../skills/CSS";
+import HTML from "../skills/HTML";
+import React from "../skills/React";
+
+import { BsBoxArrowDownRight } from "react-icons/bs";
+import { FaGithubSquare } from "react-icons/fa";
+
+type Project = {
+  name: string;
+  description: string;
+  image: string;
+  skills: ReactNode[];
+  link: string;
+  repo: string;
+};
+
+const Projects = [
+  {
+    name: "Petopia",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto enim natus voluptatum minima facere sunt quaerat tempora, iure saepe maxime quos ullam eligendi modi, quibusdam ipsum perferendis nesciunt accusantium incidunt!",
+    image:
+      "https://images.pexels.com/photos/20801061/pexels-photo-20801061/free-photo-of-madeira-alvorecer-amanhecer-aurora.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    skills: [<CSS size={20} />, <HTML size={20} />, <React size={20} />],
+    link: "https://petopia-shop.vercel.app/",
+    repo: "https://github.com/pbsora/petshop",
+  },
+  {
+    name: "Momiji",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto enim natus voluptatum minima facere sunt quaerat tempora, iure saepe maxime quos ullam eligendi modi, quibusdam ipsum perferendis nesciunt accusantium incidunt!",
+    image:
+      "https://images.pexels.com/photos/21369952/pexels-photo-21369952/free-photo-of-comida-alimento-refeicao-madeira.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    skills: [<CSS size={20} />, <HTML size={20} />, <React size={20} />],
+    link: "https://momiji-eight.vercel.app",
+    repo: "https://github.com/pbsora/odinbook",
+  },
+];
+
+const Portfolio = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["end end", "start start"],
+  });
+
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
+
+  return (
+    <section className="bg-[#0B192E] relative " id="portfolio" ref={ref}>
+      <div className="sticky left-0 top-0 pt-20 text-white ">
+        <h1 className="text-center text-4xl mb-3 text-orange-400 font-montserrat font-bold">
+          My work
+        </h1>
+        <motion.div style={{ scaleX }} className="h-3 bg-white"></motion.div>
+      </div>
+      {Projects.map((el, i) => (
+        <Single key={el.name} position={i} project={el} />
+      ))}
+    </section>
+  );
+};
+
+/* const buttonVariants = {
+  initial: { opacity: 0 },
+  animate: () => ({ opacity: 1 }),
+  transition: { delay: 0.9, duration: 0.5, ease: "easeInOut" },
+}; */
+
+const Single = ({
+  position,
+  project,
+}: {
+  position: number;
+  project: Project;
+}) => {
+  return (
+    <>
+      <section
+        className={` text-white h-screen w-full snap-center bg-[#0B192E] items-center overflow-hidden mt-3`}
+      >
+        <div
+          className={`${position + 1 === 2 ? "lg:flex-row-reverse" : "lg:flex-row "}  flex items-center justify-center h-full max-w-[85%] lg:max-w-[65%] gap-10 m-auto flex-col mt-10`}
+        >
+          <motion.div
+            className="lg:flex-1"
+            initial={{ x: "-100%", opacity: 0 }}
+            whileInView={{
+              x: 0,
+              opacity: 1,
+              transition: {
+                type: "spring",
+                bounce: 0.1,
+                duration: 0.9,
+                damping: 15,
+              },
+            }}
+            exit={{ x: "-100%" }}
+          >
+            <img
+              src={project.image}
+              className="aspect-video object-cover lg:scale-125 rounded-xl"
+              alt={project.name}
+            />
+          </motion.div>
+          <motion.div
+            className="flex flex-col gap-8 lg:flex-1"
+            initial={{ y: "100%", opacity: 1 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+              transition: {
+                type: "spring",
+                bounce: 0.1,
+                duration: 0.9,
+                damping: 15,
+              },
+            }}
+          >
+            <motion.h2
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.9, duration: 0.5, ease: "easeInOut" }}
+              className={`${position + 1 === 2 ? "lg:text-left lg:translate-x-20" : "lg:text-right lg:-translate-x-20"} text-3xl font-bold font-montserrat`}
+            >
+              {project.name}
+            </motion.h2>
+            <p
+              className={`${position + 1 == 2 ? "lg:translate-x-20" : "lg:-translate-x-20"} text-zinc-300 font-inter rounded-lg p-3  bg-[#011F38] shadow-2xl`}
+            >
+              {project.description}
+            </p>
+            <div
+              className={`${position + 1 === 2 ? "self-start lg:translate-x-20" : "self-end lg:-translate-x-20"} flex `}
+            >
+              {project.skills?.map((skill, i) => (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{
+                    delay: 0.9 + 0.2 * i,
+
+                    ease: "easeInOut",
+                  }}
+                >
+                  {skill}
+                </motion.div>
+              ))}
+            </div>
+            <div
+              className={`${position + 1 === 2 ? "self-start translate-x-20" : "self-end -translate-x-20"} flex  items-center justify-center gap-10`}
+            >
+              <motion.button
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.9, duration: 0.5, ease: "easeInOut" }}
+                className=" py-2 w-2/4"
+              >
+                <a
+                  href={project.link}
+                  target="_blank"
+                  className={`text-white text-base flex items-center justify-center gap-2 font-montserrat text-nowrap w-fit after:absolute relative after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-red-500 after:scale-x-[0] after:hover:scale-x-[1] after:transition-transform duration-500 after:origin-right after:hover:origin-left cursor-pointer ease-in`}
+                >
+                  LIVE PREVIEW <BsBoxArrowDownRight className="-rotate-90" />
+                </a>
+              </motion.button>
+              <motion.button
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 1.2, duration: 0.5, ease: "easeInOut" }}
+                className=" py-2 w-2/4"
+              >
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  className={`text-white text-base flex items-center justify-center gap-2 font-montserrat text-nowrap w-fit after:absolute relative after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-red-500 after:scale-x-[0] after:hover:scale-x-[1] after:transition-transform duration-500 after:origin-right after:hover:origin-left cursor-pointer ease-in`}
+                >
+                  GITHUB <FaGithubSquare />
+                </a>
+              </motion.button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Portfolio;
