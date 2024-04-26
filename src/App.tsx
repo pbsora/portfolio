@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <Hero />
       <section
-        className="h-screen snap-center w-full bg-green-300 snap-always"
+        className="h-screen snap-center w-full snap-always bg-gradient-to-b from-[#181A1B] to-[#0B192E] from-40% to-80%"
         id="about"
       >
         About

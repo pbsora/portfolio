@@ -6,6 +6,7 @@ import React from "../skills/React";
 
 import { BsBoxArrowDownRight } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
+import PortfolioLink from "./PortfolioLink";
 
 type Project = {
   name: string;
@@ -51,7 +52,7 @@ const Portfolio = () => {
   return (
     <section className="bg-[#0B192E] relative " id="portfolio" ref={ref}>
       <div className="sticky left-0 top-0 pt-20 text-white ">
-        <h1 className="text-center text-4xl mb-3 text-orange-400 font-montserrat font-bold">
+        <h1 className="text-center text-4xl mb-3 text-orange-600 font-montserrat font-bold">
           My work
         </h1>
         <motion.div style={{ scaleX }} className="h-3 bg-white"></motion.div>
@@ -63,12 +64,6 @@ const Portfolio = () => {
   );
 };
 
-/* const buttonVariants = {
-  initial: { opacity: 0 },
-  animate: () => ({ opacity: 1 }),
-  transition: { delay: 0.9, duration: 0.5, ease: "easeInOut" },
-}; */
-
 const Single = ({
   position,
   project,
@@ -79,14 +74,14 @@ const Single = ({
   return (
     <>
       <section
-        className={` text-white h-screen w-full snap-center bg-[#0B192E] items-center overflow-hidden mt-3`}
+        className={` text-white h-screen w-full snap-center bg-[#0B192E] overflow-hidden mt-3`}
       >
         <div
-          className={`${position + 1 === 2 ? "lg:flex-row-reverse" : "lg:flex-row "}  flex items-center justify-center h-full max-w-[85%] lg:max-w-[65%] gap-10 m-auto flex-col mt-10`}
+          className={`${position + 1 === 2 ? "lg:flex-row-reverse" : "lg:flex-row "} flex items-center justify-center h-full max-w-[85%] lg:max-w-[75%] m-auto flex-col mt-10`}
         >
           <motion.div
-            className="lg:flex-1"
-            initial={{ x: "-100%", opacity: 0 }}
+            className="lg:flex-1 relative"
+            initial={{ x: position + 1 === 2 ? "-100%" : "100%", opacity: 0 }}
             whileInView={{
               x: 0,
               opacity: 1,
@@ -101,12 +96,12 @@ const Single = ({
           >
             <img
               src={project.image}
-              className="aspect-video object-cover lg:scale-125 rounded-xl"
+              className="aspect-video object-cover lg:scale-110 rounded-xl shadow-2xl "
               alt={project.name}
             />
           </motion.div>
           <motion.div
-            className="flex flex-col gap-8 lg:flex-1"
+            className="flex flex-col gap-8 lg:flex-1 mt-4 lg:mt-0"
             initial={{ y: "100%", opacity: 1 }}
             whileInView={{
               y: 0,
@@ -124,18 +119,29 @@ const Single = ({
               whileInView={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.9, duration: 0.5, ease: "easeInOut" }}
+              viewport={{ once: true }}
               className={`${position + 1 === 2 ? "lg:text-left lg:translate-x-20" : "lg:text-right lg:-translate-x-20"} text-3xl font-bold font-montserrat`}
             >
               {project.name}
             </motion.h2>
             <p
-              className={`${position + 1 == 2 ? "lg:translate-x-20" : "lg:-translate-x-20"} text-zinc-300 font-inter rounded-lg p-3  bg-[#011F38] shadow-2xl`}
+              className={`${position + 1 == 2 ? "lg:translate-x-20" : "lg:-translate-x-20"} text-zinc-300 font-montserrat rounded-lg py-4 px-3  bg-[#011F38] shadow-2xl`}
             >
               {project.description}
             </p>
             <div
-              className={`${position + 1 === 2 ? "self-start lg:translate-x-20" : "self-end lg:-translate-x-20"} flex `}
+              className={`${position + 1 === 2 ? "self-start lg:translate-x-20" : "self-end lg:-translate-x-20"} flex items-center`}
             >
+              <motion.h2
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ delay: 0.9, duration: 0.5, ease: "easeInOut" }}
+                viewport={{ once: true }}
+                className="block mr-6"
+              >
+                Made with:
+              </motion.h2>
               {project.skills?.map((skill, i) => (
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -145,6 +151,7 @@ const Single = ({
 
                     ease: "easeInOut",
                   }}
+                  viewport={{ once: true }}
                 >
                   {skill}
                 </motion.div>
@@ -158,28 +165,22 @@ const Single = ({
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.5, ease: "easeInOut" }}
                 className=" py-2 w-2/4"
+                viewport={{ once: true }}
               >
-                <a
-                  href={project.link}
-                  target="_blank"
-                  className={`text-white text-base flex items-center justify-center gap-2 font-montserrat text-nowrap w-fit after:absolute relative after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-red-500 after:scale-x-[0] after:hover:scale-x-[1] after:transition-transform duration-500 after:origin-right after:hover:origin-left cursor-pointer ease-in`}
-                >
+                <PortfolioLink link={project.link}>
                   LIVE PREVIEW <BsBoxArrowDownRight className="-rotate-90" />
-                </a>
+                </PortfolioLink>
               </motion.button>
               <motion.button
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 1.2, duration: 0.5, ease: "easeInOut" }}
                 className=" py-2 w-2/4"
+                viewport={{ once: true }}
               >
-                <a
-                  href={project.repo}
-                  target="_blank"
-                  className={`text-white text-base flex items-center justify-center gap-2 font-montserrat text-nowrap w-fit after:absolute relative after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-red-500 after:scale-x-[0] after:hover:scale-x-[1] after:transition-transform duration-500 after:origin-right after:hover:origin-left cursor-pointer ease-in`}
-                >
+                <PortfolioLink link={project.repo}>
                   GITHUB <FaGithubSquare />
-                </a>
+                </PortfolioLink>
               </motion.button>
             </div>
           </motion.div>

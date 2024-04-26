@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`flex z-10 justify-between px-10 md:px-32 py-4 fixed top-0 w-full  duration-500 ease-in-out ${isTop ? "bg-transparent" : "bg-red-500/90"}`}
+      className={`flex z-10 justify-between px-10 md:px-32 py-4 fixed top-0 w-full  duration-500 ease-in-out ${isTop ? "bg-transparent" : "bg-red-500/80"}`}
     >
       <div className="text-2xl md:text-3xl text-zinc-700 font-semibold flex gap-3 font-montserrat">
         <span className="text-white">Pedro</span>
