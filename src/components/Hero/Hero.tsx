@@ -3,12 +3,13 @@ import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import { motion } from "framer-motion";
+import { HiOutlineDocumentArrowDown } from "react-icons/hi2";
 
 const Hero = () => {
   return (
     <section
       className="h-screen snap-center w-full bg-[#181A1B] relative flex items-center justify-center"
-      id="home"
+      id="hero"
     >
       <div className="font-montserrat flex flex-col gap-6">
         <motion.h1
@@ -56,7 +57,7 @@ const Hero = () => {
           </motion.a>
         </div>
       </div>
-      <div className="absolute bottom-24 md:bottom-40 left-0">
+      <div className="absolute bottom-24 md:bottom-40 -left-2">
         <Icon
           name="LinkedIn"
           bgColor="bg-sky-600"
@@ -78,6 +79,9 @@ const Hero = () => {
         >
           <MdEmail />
         </Icon>
+        <Icon name="My resume" bgColor="bg-yellow-500" link="">
+          <HiOutlineDocumentArrowDown />
+        </Icon>
       </div>
       <div className="absolute text-white text-xl bottom-0 left-[50%] animate-bounce duration-[2s] flex flex-col">
         <IoIosArrowDown />
@@ -88,7 +92,7 @@ const Hero = () => {
 };
 export default Hero;
 
-const Icon = ({
+export const Icon = ({
   name,
   bgColor,
   link,

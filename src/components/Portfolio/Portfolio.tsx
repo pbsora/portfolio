@@ -38,6 +38,26 @@ const Projects = [
     link: "https://momiji-eight.vercel.app",
     repo: "https://github.com/pbsora/odinbook",
   },
+  {
+    name: "Petopia",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto enim natus voluptatum minima facere sunt quaerat tempora, iure saepe maxime quos ullam eligendi modi, quibusdam ipsum perferendis nesciunt accusantium incidunt!",
+    image:
+      "https://images.pexels.com/photos/20801061/pexels-photo-20801061/free-photo-of-madeira-alvorecer-amanhecer-aurora.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    skills: [<CSS size={20} />, <HTML size={20} />, <React size={20} />],
+    link: "https://petopia-shop.vercel.app/",
+    repo: "https://github.com/pbsora/petshop",
+  },
+  {
+    name: "Momiji",
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto enim natus voluptatum minima facere sunt quaerat tempora, iure saepe maxime quos ullam eligendi modi, quibusdam ipsum perferendis nesciunt accusantium incidunt!",
+    image:
+      "https://images.pexels.com/photos/21369952/pexels-photo-21369952/free-photo-of-comida-alimento-refeicao-madeira.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    skills: [<CSS size={20} />, <HTML size={20} />, <React size={20} />],
+    link: "https://momiji-eight.vercel.app",
+    repo: "https://github.com/pbsora/odinbook",
+  },
 ];
 
 const Portfolio = () => {
