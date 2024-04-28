@@ -68,7 +68,6 @@ const Contact = () => {
               target="_blank"
             >
               <div className="bg-white blur-md scale-0 group-hover:scale-125 inset-0 absolute duration-200" />
-              target="_blank"
               <FaGithubSquare
                 size={40}
                 className="group-hover:text-zinc-700 relative duration-500 hover:bg-white  rounded-lg ring-white"
