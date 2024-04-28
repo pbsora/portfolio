@@ -62,8 +62,13 @@ const Contact = () => {
                 className="duration-500 relative ring-sky-400 rounded-md "
               />
             </a>
-            <a href="https://github.com/pbsora" className="relative group">
+            <a
+              href="https://github.com/pbsora"
+              className="relative group"
+              target="_blank"
+            >
               <div className="bg-white blur-md scale-0 group-hover:scale-125 inset-0 absolute duration-200" />
+              target="_blank"
               <FaGithubSquare
                 size={40}
                 className="group-hover:text-zinc-700 relative duration-500 hover:bg-white  rounded-lg ring-white"
