@@ -54,6 +54,7 @@ const Contact = () => {
             <a
               href="https://www.linkedin.com/in/pedro-bispo99"
               className="relative group"
+              target="_blank"
             >
               <div className="bg-sky-400 blur-md scale-0 group-hover:scale-125 inset-0 absolute duration-200" />
               <FaLinkedin
@@ -70,6 +71,7 @@ const Contact = () => {
             </a>
             <a
               href=""
+              target="_blank"
               className="duration-500 hover:ring-8 ring-yellow-400 rounded-md hover:bg-yellow-400 flex items-center gap-3 group"
             >
               <HiOutlineDocumentArrowDown size={40} className="" />
