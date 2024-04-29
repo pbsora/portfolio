@@ -79,7 +79,7 @@ const Hero = () => {
         >
           <MdEmail />
         </Icon>
-        <Icon name="My resume" bgColor="bg-yellow-500" link="">
+        <Icon name="My resume" bgColor="bg-yellow-500" link="asd">
           <HiOutlineDocumentArrowDown />
         </Icon>
       </div>

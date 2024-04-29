@@ -7,7 +7,7 @@ import {
   FaNodeJs,
   FaReact,
 } from "react-icons/fa";
-import { TbBrandNextjs } from "react-icons/tb";
+import { TbBrandCSharp, TbBrandNextjs } from "react-icons/tb";
 import {
   SiAdobephotoshop,
   SiDotnet,
@@ -18,6 +18,7 @@ import { RiJavascriptFill } from "react-icons/ri";
 import { BiLogoPostgresql, BiLogoTypescript } from "react-icons/bi";
 import { DiMongodb } from "react-icons/di";
 import { FcLinux } from "react-icons/fc";
+import { Fragment } from "react/jsx-runtime";
 
 const front = [
   <SkillIcon>
@@ -59,6 +60,9 @@ const back = [
   <SkillIcon>
     <SiDotnet size={45} className="text-zinc-300" />
   </SkillIcon>,
+  <SkillIcon>
+    <TbBrandCSharp size={45} className="text-zinc-300" />
+  </SkillIcon>,
 ];
 
 const other = [
@@ -79,7 +83,7 @@ const other = [
 const Skills = () => {
   return (
     <section
-      className="h-screen snap-center w-full snap-always bg-[#0B192E] text-white flex items-center"
+      className="h-screen snap-center overflow-hidden w-full snap-always bg-[#0B192E] text-white flex items-center"
       id="skills"
     >
       <div className="w-full container lg:w-[65%] h-3/4 lg:h-[65%] m-auto items-center justify-center font-montserrat ">
@@ -89,37 +93,49 @@ const Skills = () => {
           </h1>
           <hr className="border border-zinc-800 w-2/4" />
         </div>
-        <div className=" flex flex-col gap-10">
-          <div className=" h-28 m-auto overflow-x-hidden w-[960px] ">
+        <div className=" flex flex-col gap-20 lg:gap-10">
+          <div className="h-28 m-auto overflow-x-hidden w-full lg:w-[960px] ">
             <h2 className="mb-8">Frontend</h2>
             <div className="mask">
               <div className="flex flex-nowrap justify-around min-w-[200%] slide-reverse hover:paused ">
-                {front.map((logo) => logo)}
-                {front.map((logo) => logo)}
+                {front.map((logo, i) => (
+                  <Fragment key={i}>{logo}</Fragment>
+                ))}
+                {front.map((logo, i) => (
+                  <Fragment key={i * 10}>{logo}</Fragment>
+                ))}
               </div>
             </div>
           </div>
-          <div className=" h-28 m-auto overflow-hidden  w-[960px] track">
+          <div className="h-28 m-auto overflow-hidden w-full lg:w-[960px] track">
             <h2 className="mb-8">Backend</h2>
             <div className="mask">
               <div
                 className="flex flex-nowrap justify-around min-w-[200%] relative slide-track
               hover:paused mask"
               >
-                {back.map((logo) => logo)}
-                {back.map((logo) => logo)}
+                {back.map((logo, i) => (
+                  <Fragment key={i}>{logo}</Fragment>
+                ))}
+                {back.map((logo, i) => (
+                  <Fragment key={i * 10}>{logo}</Fragment>
+                ))}
               </div>
             </div>
           </div>
-          <div className=" h-28 m-auto overflow-hidden  w-[960px] track">
+          <div className=" h-28 m-auto overflow-hidden  w-full lg:w-[960px] track">
             <h2 className="mb-8">Other technologies</h2>
             <div className="mask">
               <div
                 className="flex flex-nowrap justify-around min-w-[200%] slide-reverse
               hover:paused mask"
               >
-                {other.map((logo) => logo)}
-                {other.map((logo) => logo)}
+                {other.map((logo, i) => (
+                  <Fragment key={i}>{logo}</Fragment>
+                ))}
+                {other.map((logo, i) => (
+                  <Fragment key={i * 10}>{logo}</Fragment>
+                ))}
               </div>
             </div>
           </div>

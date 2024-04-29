@@ -36,12 +36,12 @@ const Contact = () => {
 
   return (
     <section
-      className="h-screen snap-center w-full bg-yellow-300 snap-always bg-gradient-to-b to-[#181A1B] text-white from-[#0B192E] from-30% to-70% font-montserrat"
+      className="h-screen snap-center w-full  bg-yellow-300 snap-always bg-gradient-to-b to-[#181A1B] text-white from-[#0B192E] from-30% to-70% font-montserrat"
       id="contact"
     >
-      <div className="max-w-[80%] h-full flex flex-col lg:flex-row justify-center items-center m-auto ">
-        <div className="flex-1 h-full flex flex-col justify-center gap-8">
-          <h1 className="text-7xl font-bold">Say hi!</h1>
+      <div className="max-w-full px-6 lg:max-w-[80%] h-3/4 lg:h-full mt-28 lg:mt-0 flex flex-col lg:flex-row justify-center items-center m-auto ">
+        <div className="lg:flex-1  h-full flex flex-col justify-center gap-4 lg:gap-8">
+          <h1 className="text-5xl lg:text-7xl font-bold">Say hi!</h1>
           <div>
             <p className="text-2xl">I'm always open to new projects.</p>
             <p className="text-2xl">Feel free to contact me.</p>
@@ -89,7 +89,7 @@ const Contact = () => {
           action=""
           ref={form}
           onSubmit={sendEmail}
-          className="flex flex-1 h-full flex-col justify-center items-center gap-6 container"
+          className="flex lg:flex-1 h-full w-full flex-col justify-center items-center gap-6 md:container mt-8 lg:mt-0"
         >
           <input
             type="text"

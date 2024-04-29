@@ -1,5 +1,5 @@
 import { motion, useScroll, useSpring } from "framer-motion";
-import { ReactNode, useRef } from "react";
+import { Fragment, ReactNode, useRef } from "react";
 
 import { BsBoxArrowDownRight } from "react-icons/bs";
 import { FaGithubSquare, FaHtml5 } from "react-icons/fa";
@@ -16,46 +16,6 @@ type Project = {
 };
 
 const Projects = [
-  {
-    name: "Petopia",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto enim natus voluptatum minima facere sunt quaerat tempora, iure saepe maxime quos ullam eligendi modi, quibusdam ipsum perferendis nesciunt accusantium incidunt!",
-    image:
-      "https://images.pexels.com/photos/20801061/pexels-photo-20801061/free-photo-of-madeira-alvorecer-amanhecer-aurora.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    skills: [
-      <SkillIcon>
-        <FaHtml5 size={45} className="text-red-500" />
-      </SkillIcon>,
-      <SkillIcon>
-        <FaHtml5 size={45} className="text-red-500" />
-      </SkillIcon>,
-      <SkillIcon>
-        <FaHtml5 size={45} className="text-red-500" />
-      </SkillIcon>,
-    ],
-    link: "https://petopia-shop.vercel.app/",
-    repo: "https://github.com/pbsora/petshop",
-  },
-  {
-    name: "Momiji",
-    description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto enim natus voluptatum minima facere sunt quaerat tempora, iure saepe maxime quos ullam eligendi modi, quibusdam ipsum perferendis nesciunt accusantium incidunt!",
-    image:
-      "https://images.pexels.com/photos/21369952/pexels-photo-21369952/free-photo-of-comida-alimento-refeicao-madeira.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    skills: [
-      <SkillIcon>
-        <FaHtml5 size={45} className="text-red-500" />
-      </SkillIcon>,
-      <SkillIcon>
-        <FaHtml5 size={45} className="text-red-500" />
-      </SkillIcon>,
-      <SkillIcon>
-        <FaHtml5 size={45} className="text-red-500" />
-      </SkillIcon>,
-    ],
-    link: "https://momiji-eight.vercel.app",
-    repo: "https://github.com/pbsora/odinbook",
-  },
   {
     name: "Petopia",
     description:
@@ -116,7 +76,9 @@ const Portfolio = () => {
         <motion.div style={{ scaleX }} className="h-3 bg-white"></motion.div>
       </div>
       {Projects.map((el, i) => (
-        <Single key={el.name} position={i} project={el} />
+        <Fragment key={i + 1 * 10}>
+          <Single position={i} project={el} />
+        </Fragment>
       ))}
     </section>
   );
@@ -188,7 +150,7 @@ const Single = ({
               {project.description}
             </p>
             <div
-              className={`${position + 1 === 2 ? "self-start lg:translate-x-20" : "self-end lg:-translate-x-20"} flex items-center`}
+              className={`${position + 1 === 2 ? "lg:self-start lg:translate-x-20" : "lg:self-end lg:-translate-x-20"} flex items-center`}
             >
               <motion.h2
                 initial={{ opacity: 0 }}
@@ -216,7 +178,7 @@ const Single = ({
               ))}
             </div>
             <div
-              className={`${position + 1 === 2 ? "self-start translate-x-20" : "self-end -translate-x-20"} flex  items-center justify-center gap-10`}
+              className={`${position + 1 === 2 ? "lg:self-start lg:translate-x-20" : "lg:self-end lg:-translate-x-20"} flex items-center justify-center gap-10`}
             >
               <motion.button
                 initial={{ opacity: 0 }}
