@@ -81,3 +81,37 @@ html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
+
+@keyframes slide {
+  to {
+    transform: translateX(calc(-50%));
+  }
+}
+
+@keyframes reversed {
+  from {
+    transform: translateX(calc(-50%));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slide-track {
+  animation: slide 10s linear infinite;
+}
+
+.mask {
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 10%,
+    white 90%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+}
+
+.slide-reverse {
+  animation: reversed 10s linear infinite;
+}

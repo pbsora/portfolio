@@ -1,12 +1,10 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import { ReactNode, useRef } from "react";
-import CSS from "../skills/CSS";
-import HTML from "../skills/HTML";
-import React from "../skills/React";
 
 import { BsBoxArrowDownRight } from "react-icons/bs";
-import { FaGithubSquare } from "react-icons/fa";
+import { FaGithubSquare, FaHtml5 } from "react-icons/fa";
 import PortfolioLink from "./PortfolioLink";
+import SkillIcon from "../skills/SkillIcon";
 
 type Project = {
   name: string;
@@ -24,7 +22,17 @@ const Projects = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto enim natus voluptatum minima facere sunt quaerat tempora, iure saepe maxime quos ullam eligendi modi, quibusdam ipsum perferendis nesciunt accusantium incidunt!",
     image:
       "https://images.pexels.com/photos/20801061/pexels-photo-20801061/free-photo-of-madeira-alvorecer-amanhecer-aurora.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    skills: [<CSS size={20} />, <HTML size={20} />, <React size={20} />],
+    skills: [
+      <SkillIcon>
+        <FaHtml5 size={45} className="text-red-500" />
+      </SkillIcon>,
+      <SkillIcon>
+        <FaHtml5 size={45} className="text-red-500" />
+      </SkillIcon>,
+      <SkillIcon>
+        <FaHtml5 size={45} className="text-red-500" />
+      </SkillIcon>,
+    ],
     link: "https://petopia-shop.vercel.app/",
     repo: "https://github.com/pbsora/petshop",
   },
@@ -34,7 +42,17 @@ const Projects = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto enim natus voluptatum minima facere sunt quaerat tempora, iure saepe maxime quos ullam eligendi modi, quibusdam ipsum perferendis nesciunt accusantium incidunt!",
     image:
       "https://images.pexels.com/photos/21369952/pexels-photo-21369952/free-photo-of-comida-alimento-refeicao-madeira.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    skills: [<CSS size={20} />, <HTML size={20} />, <React size={20} />],
+    skills: [
+      <SkillIcon>
+        <FaHtml5 size={45} className="text-red-500" />
+      </SkillIcon>,
+      <SkillIcon>
+        <FaHtml5 size={45} className="text-red-500" />
+      </SkillIcon>,
+      <SkillIcon>
+        <FaHtml5 size={45} className="text-red-500" />
+      </SkillIcon>,
+    ],
     link: "https://momiji-eight.vercel.app",
     repo: "https://github.com/pbsora/odinbook",
   },
@@ -44,7 +62,17 @@ const Projects = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto enim natus voluptatum minima facere sunt quaerat tempora, iure saepe maxime quos ullam eligendi modi, quibusdam ipsum perferendis nesciunt accusantium incidunt!",
     image:
       "https://images.pexels.com/photos/20801061/pexels-photo-20801061/free-photo-of-madeira-alvorecer-amanhecer-aurora.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    skills: [<CSS size={20} />, <HTML size={20} />, <React size={20} />],
+    skills: [
+      <SkillIcon>
+        <FaHtml5 size={45} className="text-red-500" />
+      </SkillIcon>,
+      <SkillIcon>
+        <FaHtml5 size={45} className="text-red-500" />
+      </SkillIcon>,
+      <SkillIcon>
+        <FaHtml5 size={45} className="text-red-500" />
+      </SkillIcon>,
+    ],
     link: "https://petopia-shop.vercel.app/",
     repo: "https://github.com/pbsora/petshop",
   },
@@ -54,7 +82,17 @@ const Projects = [
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto enim natus voluptatum minima facere sunt quaerat tempora, iure saepe maxime quos ullam eligendi modi, quibusdam ipsum perferendis nesciunt accusantium incidunt!",
     image:
       "https://images.pexels.com/photos/21369952/pexels-photo-21369952/free-photo-of-comida-alimento-refeicao-madeira.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    skills: [<CSS size={20} />, <HTML size={20} />, <React size={20} />],
+    skills: [
+      <SkillIcon>
+        <FaHtml5 size={45} className="text-red-500" />
+      </SkillIcon>,
+      <SkillIcon>
+        <FaHtml5 size={45} className="text-red-500" />
+      </SkillIcon>,
+      <SkillIcon>
+        <FaHtml5 size={45} className="text-red-500" />
+      </SkillIcon>,
+    ],
     link: "https://momiji-eight.vercel.app",
     repo: "https://github.com/pbsora/odinbook",
   },
