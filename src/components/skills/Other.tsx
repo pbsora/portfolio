@@ -26,7 +26,7 @@ const Other = () => {
       <div className="mask">
         <div
           className="flex flex-nowrap justify-around min-w-[200%] slide-reverse
-              hover:paused mask"
+               mask"
         >
           {other.map((logo, i) => (
             <Fragment key={i}>{logo}</Fragment>

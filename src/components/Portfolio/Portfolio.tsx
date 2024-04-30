@@ -1,10 +1,21 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Fragment, ReactNode, useRef } from "react";
-
+import {
+  SiExpress,
+  SiMongodb,
+  SiReactquery,
+  SiTailwindcss,
+} from "react-icons/si";
 import { BsBoxArrowDownRight } from "react-icons/bs";
-import { FaGithubSquare, FaHtml5 } from "react-icons/fa";
+import { FaGithubSquare, FaNodeJs } from "react-icons/fa";
 import PortfolioLink from "./PortfolioLink";
 import SkillIcon from "../skills/SkillIcon";
+import { FaReact } from "react-icons/fa6";
+import { SiDotnet } from "react-icons/si";
+import { BiLogoPostgresql, BiLogoTypescript } from "react-icons/bi";
+
+import petopia from "/petopia.png";
+import momiji from "/momiji.png";
 
 type Project = {
   name: string;
@@ -19,18 +30,26 @@ const Projects = [
   {
     name: "Petopia",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto enim natus voluptatum minima facere sunt quaerat tempora, iure saepe maxime quos ullam eligendi modi, quibusdam ipsum perferendis nesciunt accusantium incidunt!",
-    image:
-      "https://images.pexels.com/photos/20801061/pexels-photo-20801061/free-photo-of-madeira-alvorecer-amanhecer-aurora.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "Because of my love of dogs, i decided to make my own petshop (even though it's fake), then this project came alive. Like real stores, you can create an account, bookmark products to see them later, search for products by name and a few search filters, and of course make a purchase, which will show under your profile.",
+    image: petopia,
     skills: [
       <SkillIcon>
-        <FaHtml5 size={45} className="text-red-500" />
+        <FaReact size={25} className="text-blue-500" />
       </SkillIcon>,
       <SkillIcon>
-        <FaHtml5 size={45} className="text-red-500" />
+        <BiLogoTypescript size={25} className="text-blue-500" />
       </SkillIcon>,
       <SkillIcon>
-        <FaHtml5 size={45} className="text-red-500" />
+        <SiDotnet size={25} className="text-zinc-300" />
+      </SkillIcon>,
+      <SkillIcon>
+        <SiTailwindcss size={25} className="text-sky-500" />
+      </SkillIcon>,
+      <SkillIcon>
+        <BiLogoPostgresql size={25} className="text-sky-500" />
+      </SkillIcon>,
+      <SkillIcon>
+        <SiReactquery size={25} className="text-red-500" />
       </SkillIcon>,
     ],
     link: "https://petopia-shop.vercel.app/",
@@ -39,18 +58,23 @@ const Projects = [
   {
     name: "Momiji",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto enim natus voluptatum minima facere sunt quaerat tempora, iure saepe maxime quos ullam eligendi modi, quibusdam ipsum perferendis nesciunt accusantium incidunt!",
-    image:
-      "https://images.pexels.com/photos/21369952/pexels-photo-21369952/free-photo-of-comida-alimento-refeicao-madeira.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "This project was part of The Odin Project's curriculum. The task was to create a social media clone. I went with a Twitter-style version. For keeping things secure, I used express sessions and passport for authentication. And to make life easier, I added Google authentication too. MongoDB handled all the data storage",
+    image: momiji,
     skills: [
       <SkillIcon>
-        <FaHtml5 size={45} className="text-red-500" />
+        <FaReact size={25} className="text-blue-500" />
       </SkillIcon>,
       <SkillIcon>
-        <FaHtml5 size={45} className="text-red-500" />
+        <FaNodeJs size={25} className="text-green-500" />
       </SkillIcon>,
       <SkillIcon>
-        <FaHtml5 size={45} className="text-red-500" />
+        <SiExpress size={25} className="text-zinc-300" />
+      </SkillIcon>,
+      <SkillIcon>
+        <SiTailwindcss size={25} className="text-sky-500" />
+      </SkillIcon>,
+      <SkillIcon>
+        <SiMongodb size={25} className="text-green-500" />
       </SkillIcon>,
     ],
     link: "https://momiji-eight.vercel.app",
@@ -73,7 +97,10 @@ const Portfolio = () => {
         <h1 className="text-center text-4xl mb-3 text-orange-600 font-montserrat font-bold">
           My work
         </h1>
-        <motion.div style={{ scaleX }} className="h-3 bg-white"></motion.div>
+        <motion.div
+          style={{ scaleX }}
+          className="h-2 lg:h-3 bg-white"
+        ></motion.div>
       </div>
       {Projects.map((el, i) => (
         <Fragment key={i + 1 * 10}>
@@ -162,20 +189,22 @@ const Single = ({
               >
                 Made with:
               </motion.h2>
-              {project.skills?.map((skill, i) => (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{
-                    delay: 0.9 + 0.2 * i,
+              <div className="flex gap-3">
+                {project.skills?.map((skill, i) => (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{
+                      delay: 0.9 + 0.2 * i,
 
-                    ease: "easeInOut",
-                  }}
-                  viewport={{ once: true }}
-                >
-                  {skill}
-                </motion.div>
-              ))}
+                      ease: "easeInOut",
+                    }}
+                    viewport={{ once: true }}
+                  >
+                    {skill}
+                  </motion.div>
+                ))}
+              </div>
             </div>
             <div
               className={`${position + 1 === 2 ? "lg:self-start lg:translate-x-20" : "lg:self-end lg:-translate-x-20"} flex items-center justify-center gap-10`}

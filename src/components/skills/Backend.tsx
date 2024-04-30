@@ -34,7 +34,7 @@ const Backend = () => {
       <div className="mask">
         <div
           className="flex flex-nowrap justify-around min-w-[200%] relative slide-track
-              hover:paused mask"
+             mask"
         >
           {back.map((logo, i) => (
             <Fragment key={i}>{logo}</Fragment>

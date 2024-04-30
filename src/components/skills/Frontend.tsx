@@ -35,7 +35,7 @@ const Frontend = () => {
     <div className="h-28 m-auto overflow-x-hidden w-full lg:w-[960px] ">
       <h2 className="mb-8">Frontend</h2>
       <div className="mask">
-        <div className="flex flex-nowrap justify-around min-w-[200%] slide-reverse hover:paused ">
+        <div className="flex flex-nowrap justify-around min-w-[200%] slide-reverse">
           {front.map((logo, i) => (
             <Fragment key={i}>{logo}</Fragment>
           ))}
