@@ -57,7 +57,7 @@ const Hero = () => {
           </motion.a>
         </div>
       </div>
-      <div className="absolute bottom-24 md:bottom-40 -left-2">
+      <div className="absolute bottom-16 md:bottom-40 -left-2">
         <Icon
           name="LinkedIn"
           bgColor="bg-sky-600"

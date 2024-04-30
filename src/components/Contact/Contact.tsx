@@ -1,39 +1,8 @@
-import { FormEvent, useRef, useState } from "react";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { HiOutlineDocumentArrowDown } from "react-icons/hi2";
-import emailjs from "@emailjs/browser";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
-  const form = useRef(null);
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-
-  const sendEmail = async (e: FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    if (!form.current) return;
-
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
-        form.current,
-        {
-          publicKey: import.meta.env.VITE_EMAIL_PUBLIC_KEY,
-        },
-      )
-      .then(
-        () => {
-          setLoading(false);
-          setSuccess(true);
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        },
-      );
-  };
-
   return (
     <section
       className="h-screen snap-center w-full  bg-yellow-300 snap-always bg-gradient-to-b to-[#181A1B] text-white from-[#0B192E] from-30% to-70% font-montserrat"
@@ -41,10 +10,12 @@ const Contact = () => {
     >
       <div className="max-w-full px-6 lg:max-w-[80%] h-3/4 lg:h-full mt-28 lg:mt-0 flex flex-col lg:flex-row justify-center items-center m-auto ">
         <div className="lg:flex-1  h-full flex flex-col justify-center gap-4 lg:gap-8">
-          <h1 className="text-5xl lg:text-7xl font-bold">Say hi!</h1>
+          <h1 className="text-4xl lg:text-7xl font-bold">Say hi!</h1>
           <div>
-            <p className="text-2xl">I'm always open to new projects.</p>
-            <p className="text-2xl">Feel free to contact me.</p>
+            <p className="text-xl lg:text-2xl">
+              I'm always open to new projects.
+            </p>
+            <p className="text-xl lg:text-2xl">Feel free to contact me.</p>
           </div>
           <div>
             <h2 className="text-xl">E-mail</h2>
@@ -85,48 +56,7 @@ const Contact = () => {
             </a>
           </div>
         </div>
-        <form
-          action=""
-          ref={form}
-          onSubmit={sendEmail}
-          className="flex lg:flex-1 h-full w-full flex-col justify-center items-center gap-6 md:container mt-8 lg:mt-0"
-        >
-          <input
-            type="text"
-            placeholder="Name"
-            name="name"
-            className="bg-transparent rounded-lg py-3 px-6 w-full border focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent duration-200 ease-in-out transition-colors"
-          />
-          <input
-            type="email"
-            placeholder="Your email"
-            name="email"
-            className="bg-transparent rounded-lg py-3 px-6 w-full border focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent duration-200 ease-in-out transition-colors"
-          />
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Say hi..."
-            cols={30}
-            rows={7}
-            className="bg-transparent rounded-lg py-3 px-6 w-full border focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent duration-200 ease-in-out transition-colors"
-          />
-          {success ? (
-            <button
-              className="bg-green-500 py-4 w-full rounded  duration-200"
-              disabled
-            >
-              Message sent!
-            </button>
-          ) : (
-            <button
-              className="bg-red-500 py-4 w-full hover:bg-red-600 rounded disabled:bg-red-400 duration-200"
-              disabled={loading}
-            >
-              {loading ? "Sending..." : "Send message"}
-            </button>
-          )}
-        </form>
+        <ContactForm />
       </div>
     </section>
   );
