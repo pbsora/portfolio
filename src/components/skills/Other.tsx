@@ -4,18 +4,20 @@ import { FaGitAlt, FaGithubSquare } from "react-icons/fa";
 import { FcLinux } from "react-icons/fc";
 import { SiAdobephotoshop } from "react-icons/si";
 
+const size = window.innerWidth < 780 ? 30 : 45;
+
 const other = [
   <SkillIcon>
-    <FaGitAlt size={45} className="text-red-500" />
+    <FaGitAlt size={size} className="text-red-500" />
   </SkillIcon>,
   <SkillIcon>
-    <FaGithubSquare size={45} />
+    <FaGithubSquare size={size} />
   </SkillIcon>,
   <SkillIcon>
-    <FcLinux size={45} />
+    <FcLinux size={size} />
   </SkillIcon>,
   <SkillIcon>
-    <SiAdobephotoshop size={45} className="text-sky-400" />
+    <SiAdobephotoshop size={size} className="text-sky-400" />
   </SkillIcon>,
 ];
 

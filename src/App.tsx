@@ -9,7 +9,7 @@ import "./lib/styles.css";
 
 function App() {
   return (
-    <div className="max-w-screen flex flex-col">
+    <div className="max-w-screen flex flex-col ">
       <Navbar />
       <Hero />
       <About />

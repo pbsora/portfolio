@@ -92,9 +92,13 @@ const Portfolio = () => {
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
   return (
-    <section className="bg-[#0B192E] relative " id="portfolio" ref={ref}>
-      <div className="sticky left-0 top-0 pt-20 text-white ">
-        <h1 className="text-center text-4xl mb-3 text-orange-600 font-montserrat font-bold">
+    <section
+      className="bg-[#0B192E] relative snap-always snap-start"
+      id="portfolio"
+      ref={ref}
+    >
+      <div className="sticky left-0  top-0 pt-[4.3rem] lg:pt-20 text-white ">
+        <h1 className="text-center text-2xl lg:text-4xl mb-3 text-orange-600 font-montserrat font-bold">
           My work
         </h1>
         <motion.div
@@ -107,6 +111,7 @@ const Portfolio = () => {
           <Single position={i} project={el} />
         </Fragment>
       ))}
+      <div></div>
     </section>
   );
 };
@@ -118,13 +123,16 @@ const Single = ({
   position: number;
   project: Project;
 }) => {
+  const ref = useRef(null);
+
   return (
     <>
       <section
-        className={` text-white h-screen w-full snap-center bg-[#0B192E] overflow-hidden mt-3`}
+        className={` text-white h-[100dvh] w-full snap-center snap-always bg-[#0B192E] overflow-hidden mt-3`}
       >
         <div
-          className={`${position + 1 === 2 ? "lg:flex-row-reverse" : "lg:flex-row "} flex items-center justify-center h-full max-w-[85%] lg:max-w-[75%] m-auto flex-col mt-10`}
+          ref={ref}
+          className={`${position + 1 === 2 ? "lg:flex-row-reverse" : "lg:flex-row "} flex items-center justify-center h-full max-w-[90%] lg:max-w-[75%] m-auto flex-col mt-16`}
         >
           <motion.div
             className="lg:flex-1 relative"
@@ -139,16 +147,16 @@ const Single = ({
                 damping: 15,
               },
             }}
-            exit={{ x: "-100%" }}
+            viewport={{ amount: "some", once: true }}
           >
             <img
               src={project.image}
-              className="aspect-video object-cover lg:scale-110 rounded-xl shadow-2xl "
+              className="aspect-video object-cover w-[90%] m-auto lg:scale-110 rounded-xl shadow-2xl "
               alt={project.name}
             />
           </motion.div>
           <motion.div
-            className="flex flex-col gap-8 lg:flex-1 mt-4 lg:mt-0"
+            className="flex flex-col gap-4 lg:flex-1 mt-2 lg:mt-0"
             initial={{ y: "100%", opacity: 1 }}
             whileInView={{
               y: 0,
@@ -160,19 +168,19 @@ const Single = ({
                 damping: 15,
               },
             }}
+            viewport={{ amount: "some", once: true }}
           >
             <motion.h2
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
               transition={{ delay: 0.9, duration: 0.5, ease: "easeInOut" }}
               viewport={{ once: true }}
-              className={`${position + 1 === 2 ? "lg:text-left lg:translate-x-20" : "lg:text-right lg:-translate-x-20"} text-3xl font-bold font-montserrat`}
+              className={`${position + 1 === 2 ? "lg:text-left lg:translate-x-20" : "lg:text-right lg:-translate-x-20"} text-xl lg:text-3xl font-bold font-montserrat`}
             >
               {project.name}
             </motion.h2>
             <p
-              className={`${position + 1 == 2 ? "lg:translate-x-20" : "lg:-translate-x-20"} text-zinc-300 font-montserrat rounded-lg py-4 px-3  bg-[#011F38] shadow-2xl`}
+              className={`${position + 1 == 2 ? "lg:translate-x-20" : "lg:-translate-x-20"} text-zinc-300 font-montserrat text-sm lg:text-base rounded-lg py-4 px-3  bg-[#011F38] shadow-2xl`}
             >
               {project.description}
             </p>
@@ -182,14 +190,13 @@ const Single = ({
               <motion.h2
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
                 transition={{ delay: 0.9, duration: 0.5, ease: "easeInOut" }}
                 viewport={{ once: true }}
                 className="block mr-6"
               >
                 Made with:
               </motion.h2>
-              <div className="flex gap-3">
+              <div className="flex gap-2 lg:gap-3">
                 {project.skills?.map((skill, i) => (
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -213,7 +220,7 @@ const Single = ({
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.5, ease: "easeInOut" }}
-                className=" py-2 w-2/4"
+                className="py-2 w-2/4"
                 viewport={{ once: true }}
               >
                 <PortfolioLink link={project.link}>

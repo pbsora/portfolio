@@ -8,7 +8,7 @@ import { HiOutlineDocumentArrowDown } from "react-icons/hi2";
 const Hero = () => {
   return (
     <section
-      className="h-screen snap-center w-full bg-[#181A1B] relative flex items-center justify-center"
+      className="h-[100dvh] snap-center w-full bg-[#181A1B] relative flex items-center justify-center"
       id="hero"
     >
       <div className="font-montserrat flex flex-col gap-6">
@@ -57,7 +57,7 @@ const Hero = () => {
           </motion.a>
         </div>
       </div>
-      <div className="absolute bottom-16 md:bottom-40 -left-2">
+      <div className="absolute bottom-6 md:bottom-40 -left-2">
         <Icon
           name="LinkedIn"
           bgColor="bg-sky-600"
@@ -107,9 +107,11 @@ export const Icon = ({
     <a
       href={link}
       target="_blank"
-      className={`${bgColor} cursor-pointer text-white p-4 text-3xl flex group items-center justify-center origin-left gap-6 -translate-x-[65%] hover:-translate-x-[0] duration-200 ease-in-out`}
+      className={`${bgColor} cursor-pointer text-white p-2 lg:p-4 text-2xl lg:text-3xl flex group items-center justify-center origin-left gap-6 -translate-x-[72%] lg:-translate-x-[65%] hover:-translate-x-[0] duration-200 ease-in-out`}
     >
-      <span className={`text-xl font-bold font-montserrat flex-1`}>{name}</span>
+      <span className={`pl-2 lg:pl-0 text-lg font-bold font-montserrat flex-1`}>
+        {name}
+      </span>
       {children}
     </a>
   );

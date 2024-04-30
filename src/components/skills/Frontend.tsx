@@ -6,27 +6,29 @@ import { RiJavascriptFill } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
 import { Fragment } from "react/jsx-runtime";
 
+const size = window.innerWidth < 780 ? 30 : 45;
+
 const front = [
   <SkillIcon>
-    <FaHtml5 size={45} className="text-red-500" />
+    <FaHtml5 size={size} className="text-red-500" />
   </SkillIcon>,
   <SkillIcon>
-    <FaCss3Alt size={45} className="text-sky-500" />
+    <FaCss3Alt size={size} className="text-sky-500" />
   </SkillIcon>,
   <SkillIcon>
-    <TbBrandNextjs size={45} className="text-black" />
+    <TbBrandNextjs size={size} className="text-black" />
   </SkillIcon>,
   <SkillIcon>
-    <FaReact size={45} className="text-blue-500" />
+    <FaReact size={size} className="text-blue-500" />
   </SkillIcon>,
   <SkillIcon>
-    <SiTailwindcss size={45} className="text-sky-400" />
+    <SiTailwindcss size={size} className="text-sky-400" />
   </SkillIcon>,
   <SkillIcon>
-    <RiJavascriptFill size={45} className="text-yellow-400" />
+    <RiJavascriptFill size={size} className="text-yellow-400" />
   </SkillIcon>,
   <SkillIcon>
-    <BiLogoTypescript size={45} className="text-sky-400" />
+    <BiLogoTypescript size={size} className="text-sky-400" />
   </SkillIcon>,
 ];
 

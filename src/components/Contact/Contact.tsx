@@ -5,12 +5,12 @@ import ContactForm from "./ContactForm";
 const Contact = () => {
   return (
     <section
-      className="h-screen snap-center w-full  bg-yellow-300 snap-always bg-gradient-to-b to-[#181A1B] text-white from-[#0B192E] from-30% to-70% font-montserrat"
+      className="h-[100dvh] snap-center w-full  bg-yellow-300 snap-always bg-gradient-to-b to-[#181A1B] text-white from-[#0B192E] from-30% to-70% font-montserrat"
       id="contact"
     >
       <div className="max-w-full px-6 lg:max-w-[80%] h-3/4 lg:h-full mt-28 lg:mt-0 flex flex-col lg:flex-row justify-center items-center m-auto ">
         <div className="lg:flex-1  h-full flex flex-col justify-center gap-4 lg:gap-8">
-          <h1 className="text-4xl lg:text-7xl font-bold">Say hi!</h1>
+          <h1 className="text-3xl lg:text-7xl font-bold">Say hi!</h1>
           <div>
             <p className="text-xl lg:text-2xl">
               I'm always open to new projects.

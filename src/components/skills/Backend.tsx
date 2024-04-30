@@ -6,24 +6,26 @@ import { BiLogoPostgresql } from "react-icons/bi";
 import { TbBrandCSharp } from "react-icons/tb";
 import { Fragment } from "react/jsx-runtime";
 
+const size = window.innerWidth < 780 ? 30 : 45;
+
 const back = [
   <SkillIcon>
-    <FaNodeJs size={45} className="text-green-400" />
+    <FaNodeJs size={size} className="text-green-400" />
   </SkillIcon>,
   <SkillIcon>
-    <SiExpress size={45} className="text-zinc-300" />
+    <SiExpress size={size} className="text-zinc-300" />
   </SkillIcon>,
   <SkillIcon>
-    <DiMongodb size={45} className="text-green-400" />
+    <DiMongodb size={size} className="text-green-400" />
   </SkillIcon>,
   <SkillIcon>
-    <BiLogoPostgresql size={45} className="text-sky-400" />
+    <BiLogoPostgresql size={size} className="text-sky-400" />
   </SkillIcon>,
   <SkillIcon>
-    <SiDotnet size={45} className="text-zinc-300" />
+    <SiDotnet size={size} className="text-zinc-300" />
   </SkillIcon>,
   <SkillIcon>
-    <TbBrandCSharp size={45} className="text-zinc-300" />
+    <TbBrandCSharp size={size} className="text-zinc-300" />
   </SkillIcon>,
 ];
 
