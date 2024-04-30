@@ -1,0 +1,42 @@
+import { Fragment } from "react/jsx-runtime";
+import SkillIcon from "./SkillIcon";
+import { FaGitAlt, FaGithubSquare } from "react-icons/fa";
+import { FcLinux } from "react-icons/fc";
+import { SiAdobephotoshop } from "react-icons/si";
+
+const other = [
+  <SkillIcon>
+    <FaGitAlt size={45} className="text-red-500" />
+  </SkillIcon>,
+  <SkillIcon>
+    <FaGithubSquare size={45} />
+  </SkillIcon>,
+  <SkillIcon>
+    <FcLinux size={45} />
+  </SkillIcon>,
+  <SkillIcon>
+    <SiAdobephotoshop size={45} className="text-sky-400" />
+  </SkillIcon>,
+];
+
+const Other = () => {
+  return (
+    <div className=" h-28 m-auto overflow-hidden  w-full lg:w-[960px] track">
+      <h2 className="mb-8">Other technologies</h2>
+      <div className="mask">
+        <div
+          className="flex flex-nowrap justify-around min-w-[200%] slide-reverse
+              hover:paused mask"
+        >
+          {other.map((logo, i) => (
+            <Fragment key={i}>{logo}</Fragment>
+          ))}
+          {other.map((logo, i) => (
+            <Fragment key={i * 10}>{logo}</Fragment>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+export default Other;

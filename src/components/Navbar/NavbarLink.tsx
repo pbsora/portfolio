@@ -5,7 +5,7 @@ const NavbarLink = ({
   section,
   children,
 }: {
-  isTop: boolean;
+  isTop?: boolean;
   section: string;
   children: ReactNode;
 }) => {

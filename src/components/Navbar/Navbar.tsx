@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import NavbarLink from "./NavbarLink";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { IoIosHome } from "react-icons/io";
+import Sidebar from "../Sidebar/Sidebar";
 
 const Navbar = () => {
   const [isTop, setIsTop] = useState(true);
@@ -39,14 +38,13 @@ const Navbar = () => {
       </a>
       <ul className="gap-20 items-center justify-center hidden md:flex">
         <li>
-          <NavbarLink isTop={isTop} section="hero">
-            <IoIosHome />
-            Home
+          <NavbarLink isTop={isTop} section="about">
+            About
           </NavbarLink>
         </li>
         <li>
-          <NavbarLink isTop={isTop} section="about">
-            About
+          <NavbarLink isTop={isTop} section="skills">
+            Skills
           </NavbarLink>
         </li>
         <li>
@@ -60,8 +58,8 @@ const Navbar = () => {
           </NavbarLink>
         </li>
       </ul>
-      <div className=" text-white md:hidden flex items-center text-2xl">
-        {<GiHamburgerMenu />}
+      <div className=" text-white md:hidden  text-2xl">
+        <Sidebar />
       </div>
     </nav>
   );

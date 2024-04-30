@@ -38,7 +38,7 @@ const Hero = () => {
               ease: "easeInOut",
             }}
             href="#about"
-            className="bg-transparent relative hover:cursor-pointer border-2 hover:ring-4 ring-red-800 border-red-500 hover:bg-red-500 duration-200 hover:border-transparent hover:outline-8  z-50 rounded-3xl py-3 px-6 text-white"
+            className="bg-transparent relative hover:cursor-pointer border-2 hover:ring-4 ring-red-800 border-red-500 hover:bg-red-500 duration-200 hover:border-transparent hover:outline-8  rounded-3xl py-3 px-6 text-white"
           >
             About me
           </motion.a>
